@@ -1,6 +1,6 @@
 ---
 title: "Community Contribution"
-author: "Jongyoon Sohn"
+author: "Group 12(Jongyoon Sohn, Daniel Lee)"
 date: "3/27/2019"
 output: html_document
 ---

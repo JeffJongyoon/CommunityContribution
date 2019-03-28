@@ -33,8 +33,6 @@ leaflet(crime) %>%
     stroke = FALSE, fillOpacity = 0.5
   )
 
-
-
 ```
 
 ```{r}
@@ -45,6 +43,10 @@ crime <- crime %>%
 par<-colorNumeric(c("red", "green", "blue"), 1:10)
 
 par(1:10)
+```
+
+```{r}
+
 ```
 
 

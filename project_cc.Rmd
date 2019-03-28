@@ -1,0 +1,50 @@
+---
+title: "CC"
+author: "Jongyoon Sohn"
+date: "3/27/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(leaflet)
+```
+
+## mapping
+
+```{r}
+crime <- read_csv("Data/crime.csv")
+crime <- crime %>%
+  filter(Lat != "" & Long !="") %>%
+  filter(Lat != -1 & Long != -1)
+n <- length(levels(as.factor(crime$DISTRICT)))
+par <- colorFactor(topo.colors(n), domain = crime$DISTRICT)
+
+leaflet(crime) %>%
+  addTiles() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+  addCircleMarkers(~Long, ~Lat,
+    radius = 1,
+    fillColor = ~par(DISTRICT),
+    stroke = FALSE, fillOpacity = 0.5
+  )
+
+
+
+```
+
+```{r}
+crime <- crime %>%
+  filter(Lat != "" & Long !="") %>%
+  filter(Lat != -1 & Long != -1)
+  
+par<-colorNumeric(c("red", "green", "blue"), 1:10)
+
+par(1:10)
+```
+
+
